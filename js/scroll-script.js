@@ -23,6 +23,7 @@ let onClickDown = function (evt) {
         let onClickUp = function () {
             document.removeEventListener('mousemove', onClickMove);
             document.removeEventListener('touchmove', onClickMove);
+            drawPlace.removeEventListener('touchstart', onClickDown);
             drawPlace.style.cursor = null;
         };
         
