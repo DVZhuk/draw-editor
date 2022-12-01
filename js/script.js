@@ -23,7 +23,8 @@ let onMouseDown = function (evt) {
     // и прикосновение
     
     if (evt.button == 0 ||
-        evt.type == 'touchstart') {
+        evt.type == 'touchstart' ||
+        evt.touches.length == 1) {
         // Объект начальных координат
         if (evt.type == 'mousedown') {
             startCoords = {
