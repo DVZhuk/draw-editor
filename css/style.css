@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     background-color: #C6B8B8;
     min-width: min-content;
-    min-height: 550px;
+    min-height: 480px;
     height: calc(100vh - 40px);
     padding: 20px;
     gap: 20px;
@@ -25,9 +25,9 @@ body {
     position: relative;
     flex-grow: 1;
     background-color: #e6f3e0;
-    min-width: 320px;
+    min-width: 280px;
     max-width: 1080px;
-    height: 650px;
+    height: auto;
     border-radius: 10px;
     cursor: crosshair;
     overflow: auto;
@@ -166,7 +166,15 @@ body {
     background-color: #000;
 }
 
-
+@media (max-width: 415px) {
+    .sidebar {
+        gap: 10px;
+        justify-content: space-between;
+    }
+    .shape-tools {
+        gap: 10px;
+    }
+}
 
 @media (min-width: 767px) {
     .main {
