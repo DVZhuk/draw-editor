@@ -98,6 +98,7 @@ let onMouseDown = function (evt) {
             
             if (moveEvt.type == 'touchmove' && moveEvt.touches.length > 1) {
                 document.removeEventListener('touchmove', onMouseMove);
+                document.removeEventListener('mousemove', onMouseMove);
                 currentShape.remove();
             };
             // Объект размеров ширины и высоты фигур / катеты треугольника для линии
