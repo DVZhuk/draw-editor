@@ -94,11 +94,7 @@ let onMouseDown = function (evt) {
     
         // Функция контроля передвижения мыши
         let onMouseMove = function (moveEvt) {
-            if (doubleTouchFlag) {
-                drawPlace.style.backgroundColor = 'white';
-                currentShape.remove();
-                // document.removeEventListener('touchmove', onMouseMove);
-            };
+            
             // Объект размеров ширины и высоты фигур / катеты треугольника для линии
             if (evt.type == 'mousedown') {
                 size = {
@@ -221,6 +217,11 @@ let onMouseDown = function (evt) {
         
         
     
+    };
+    
+    if (doubleTouchFlag) {
+        currentShape.remove();
+        document.removeEventListener('touchmove', onMouseMove);
     };
     
 };
