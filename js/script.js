@@ -97,8 +97,8 @@ let onMouseDown = function (evt) {
             // При двойном касании отмена создания элемента
             
             if (moveEvt.type == 'touchmove' && moveEvt.touches.length > 1) {
-                currentShape.remove();
                 document.removeEventListener('touchmove', onMouseMove);
+                currentShape.remove();
             };
             // Объект размеров ширины и высоты фигур / катеты треугольника для линии
             if (evt.type == 'mousedown') {
