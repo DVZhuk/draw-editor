@@ -1,11 +1,18 @@
-
+let doubleTouchFlag = false;
 
 let onClickDown = function (evt) {
     let startCoords;
     let shift;
-    evt.preventDefault();
+    
+    if (evt.type == 'touchstart') {
+        if (evt.touches.length > 1) {
+            doubleTouchFlag = true;
+        };
+    };
+    
     if (evt.button == 1 ||
-        evt.type == 'touchmove' && evt.touches.length > 1) {
+        doubleTouchFlag) {
+        evt.preventDefault();
         if (evt.type == 'mousedown') {
             startCoords = {
                 x: evt.pageX + drawPlace.scrollLeft - 40,
@@ -25,10 +32,12 @@ let onClickDown = function (evt) {
             document.removeEventListener('touchmove', onClickMove);
             // drawPlace.removeEventListener('touchstart', onClickDown);
             drawPlace.style.cursor = null;
+            doubleTouchFlag = false;
         };
         
     
         let onClickMove = function (moveEvt) {
+            // moveEvt.preventDefault();
             if (evt.type == 'mousedown') {
                 shift = {
                     moveX: moveEvt.pageX - startCoords.x,
@@ -50,7 +59,7 @@ let onClickDown = function (evt) {
                 moveEvt.pageX < drawPlace.offsetLeft + 5 ||
                 moveEvt.pageY < drawPlace.offsetTop + 5) { 
                     // Принудительное отжатие клика
-                    onMouseUp();
+                    onClickUp();
             };
             if (moveEvt.type == 'touchmove') {
                 if (moveEvt.changedTouches[0].pageX >= drawPlace.offsetWidth + drawPlace.offsetLeft - 5 || 
@@ -58,7 +67,7 @@ let onClickDown = function (evt) {
                     moveEvt.changedTouches[0].pageX < drawPlace.offsetLeft + 5 ||
                     moveEvt.changedTouches[0].pageY < drawPlace.offsetTop + 5) { 
                         // Принудительное отжатие клика
-                        onMouseUp();
+                        onClickUp();
                 };
             };
         };

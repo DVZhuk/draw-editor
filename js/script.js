@@ -16,15 +16,24 @@ let startCoords;
 let size;
 let touchReversCoordX = false;
 let touchReversCoordY = false;
+let oneTouchFlag = false;
+
+
 
 // Функция по нажатию мыши
 let onMouseDown = function (evt) {
+    if (evt.type == 'touchstart') {
+        if (evt.touches.length == 1) {
+            oneTouchFlag = true;
+        };
+    };
+
     // Только нажатие левой кнопки
     // и прикосновение
     
     if (evt.button == 0 ||
-        evt.touches.length == 1) {
-            console.log(evt);
+        oneTouchFlag) {
+        evt.preventDefault();
         // Объект начальных координат
         if (evt.type == 'mousedown') {
             startCoords = {
@@ -75,6 +84,7 @@ let onMouseDown = function (evt) {
                 currentShape.style.right = null;
                 currentShape.style.bottom = null;
                 flag = false;
+                oneTouchFlag = false;
             };
             // отключение контроля передвижения мыши
             document.removeEventListener('mousemove', onMouseMove);
