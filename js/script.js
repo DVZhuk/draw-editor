@@ -94,11 +94,12 @@ let onMouseDown = function (evt) {
     
         // Функция контроля передвижения мыши
         let onMouseMove = function (moveEvt) {
+            // console.log(currentShape);
             // При двойном касании отмена создания элемента
-            
-            if (moveEvt.type === 'touchmove' && evt.touches.length > 1) {
+            if (evt.type === 'touchstart' && evt.touches.length > 1) {
+                console.log('hello');
+                currentShape.remove();
                 document.removeEventListener('touchmove', onMouseMove);
-                currentShape.style.display = 'none';
             };
             // Объект размеров ширины и высоты фигур / катеты треугольника для линии
             if (evt.type == 'mousedown') {
