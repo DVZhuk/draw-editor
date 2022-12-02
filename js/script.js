@@ -215,7 +215,7 @@ let onMouseDown = function (evt) {
         drawPlace.addEventListener('mouseup', onMouseUp);
         drawPlace.addEventListener('touchend', onMouseUp);
         
-        if (evt.type === 'touchstart' && evt.targetTouches.length == 2) {
+        if (evt.targetTouches.length == 2) {
             console.log('hello');
             currentShape.remove();
             document.removeEventListener('touchmove', onMouseMove);
