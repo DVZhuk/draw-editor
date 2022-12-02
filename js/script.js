@@ -94,13 +94,7 @@ let onMouseDown = function (evt) {
     
         // Функция контроля передвижения мыши
         let onMouseMove = function (moveEvt) {
-            // console.log(currentShape);
-            // При двойном касании отмена создания элемента
-            if (evt.type === 'touchstart' && evt.touches.length > 1) {
-                console.log('hello');
-                currentShape.remove();
-                document.removeEventListener('touchmove', onMouseMove);
-            };
+            
             // Объект размеров ширины и высоты фигур / катеты треугольника для линии
             if (evt.type == 'mousedown') {
                 size = {
@@ -213,12 +207,20 @@ let onMouseDown = function (evt) {
                 };
             };
         };
-    
+
+        
         // Обработка событий движения мыши и отжатия клика
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('touchmove', onMouseMove);
         drawPlace.addEventListener('mouseup', onMouseUp);
         drawPlace.addEventListener('touchend', onMouseUp);
+        
+        if (evt.type === 'touchstart' && evt.touches.length > 1) {
+            console.log('hello');
+            currentShape.remove();
+            document.removeEventListener('touchmove', onMouseMove);
+        };
+    
     };
     
 };
