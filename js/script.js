@@ -96,7 +96,7 @@ let onMouseDown = function (evt) {
         let onMouseMove = function (moveEvt) {
             // При двойном касании отмена создания элемента
             
-            if (moveEvt.type == 'touchmove' && moveEvt.touches.length > 1) {
+            if (moveEvt.type === 'touchmove' && evt.touches.length > 1) {
                 document.removeEventListener('touchmove', onMouseMove);
                 currentShape.style.display = 'none';
             };
