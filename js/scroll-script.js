@@ -5,7 +5,7 @@ let onClickDown = function (evt) {
     let shift;
     evt.preventDefault();
     if (evt.button == 1 ||
-        evt.touches.length > 1) {
+        evt.type == 'touchmove' && evt.touches.length > 1) {
         if (evt.type == 'mousedown') {
             startCoords = {
                 x: evt.pageX + drawPlace.scrollLeft - 40,
@@ -23,7 +23,7 @@ let onClickDown = function (evt) {
         let onClickUp = function () {
             document.removeEventListener('mousemove', onClickMove);
             document.removeEventListener('touchmove', onClickMove);
-            drawPlace.removeEventListener('touchstart', onClickDown);
+            // drawPlace.removeEventListener('touchstart', onClickDown);
             drawPlace.style.cursor = null;
         };
         

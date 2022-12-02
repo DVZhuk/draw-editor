@@ -79,13 +79,14 @@ let onMouseDown = function (evt) {
             // отключение контроля передвижения мыши
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('touchmove', onMouseMove);
-            drawPlace.removeEventListener('touchstart', onMouseDown);
+            // drawPlace.removeEventListener('touchstart', onMouseDown);
         };
     
         // Функция контроля передвижения мыши
         let onMouseMove = function (moveEvt) {
             // При двойном касании отмена создания элемента
-            if (moveEvt.touches.length > 1) {
+            
+            if (moveEvt.type == 'touchmove' && moveEvt.touches.length > 1) {
                 currentShape.remove();
                 document.removeEventListener('touchmove', onMouseMove);
             };
