@@ -32,7 +32,7 @@ let onMouseDown = function (evt) {
     // и прикосновение
     
     if (evt.button == 0 ||
-        oneTouchFlag) {
+        evt.type = 'touchstart') {
         evt.preventDefault();
         // Объект начальных координат
         if (evt.type == 'mousedown') {
@@ -208,7 +208,10 @@ let onMouseDown = function (evt) {
             };
         };
 
-        
+        if (evt.touches.length > 1) {
+            currentShape.remove();
+            document.removeEventListener('touchmove', onMouseMove);
+        };
         // Обработка событий движения мыши и отжатия клика
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('touchmove', onMouseMove);
@@ -219,9 +222,7 @@ let onMouseDown = function (evt) {
     
     };
     
-    if (doubleTouchFlag) {
-        currentShape.remove();
-    };
+    
     
 };
 
