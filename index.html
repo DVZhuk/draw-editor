@@ -12,9 +12,12 @@
             <!-- <div class="draw-place__rect"></div> -->
         </section>
         <section class="sidebar">
-            <div class="color-select sidebar--color">
-                <input class="color-select__input vissually-hidden" type="color" id="color" value="#0BA0E0">
-                <label class="color-select__label" for="color"></label>
+            <div class="extra-panel">
+                <button class="backward-button sidebar--color"><div class="backward-button__tile">Отменить</div></button>
+                <div class="color-select sidebar--color">
+                    <input class="color-select__input vissually-hidden" type="color" id="color" value="#d4ce8e">
+                    <label class="color-select__label" for="color"></label>
+                </div>
             </div>
             <ul class="shape-tools sidebar--color">
                 <li class="shape-tools-item">
@@ -40,5 +43,6 @@
     </main>
     <script src="js/script.js"></script>
     <script src="js/scroll-script.js"></script>
+    <script src="js/backward-script.js"></script>
 </body>
 </html>
