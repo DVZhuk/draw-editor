@@ -225,8 +225,6 @@ let onMouseDown = function (evt) {
     
     };
     
-    
-    
 };
 
 // drawPlace.addEventListener('resize', function () {
