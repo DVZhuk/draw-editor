@@ -67,22 +67,54 @@ body {
 
 .sidebar {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: center;
     gap: 20px;
 }
 
+.extra-panel {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
+.backward-button {
+    width: auto;
+    padding: 5px;
+    flex-grow: 1;
+    border-radius: 10px;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.backward-button__tile {
+    background-color: #BB7272;
+    width: 30px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-image: url("../img/backward.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    cursor: inherit;
+}
+
 .color-select {
-    padding: 10px;
+    padding: 5px;
+    flex-grow: 1;
     width: min-content;
     border-radius: 10px;
 }
 
 .color-select__label {
     display: block;
-    width: 25px;
-    height: 70px;
-    background-color: #0BA0E0 ;
+    width: 30px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #d4ce8e;
+    cursor: pointer;
 }
 
 .shape-tools {
@@ -187,12 +219,29 @@ body {
         flex-direction: column;
         justify-content: flex-start;
     }
+    .extra-panel {
+        gap: 20px;
+    }
     .shape-tools {
         flex-direction: column;
+    }
+    .color-select {
+        padding: 10px;
     }
     .color-select__label {
         width: 70px;
         height: 25px;
+    }
+    .backward-button {
+        padding: 10px;
+    }
+    .backward-button__tile {
+        width: 70px; 
+        height: 25px;
+    }
+    .backward-button:hover .backward-button__tile{
+        background-color: #945858;
+        transition: all 100ms;
     }
 }
 
