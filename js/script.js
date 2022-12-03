@@ -32,7 +32,7 @@ let onMouseDown = function (evt) {
     // и прикосновение
     
     if (evt.button == 0 ||
-        evt.type = 'touchstart') {
+        evt.type == 'touchstart') {
         evt.preventDefault();
         // Объект начальных координат
         if (evt.type == 'mousedown') {
