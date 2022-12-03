@@ -19,7 +19,6 @@ let touchReversCoordY = false;
 let oneTouchFlag = false;
 
 
-
 // Функция по нажатию мыши
 let onMouseDown = function (evt) {
     if (evt.type == 'touchstart') {
@@ -33,7 +32,6 @@ let onMouseDown = function (evt) {
 
     // Только нажатие левой кнопки
     // и прикосновение
-    
     if (evt.button == 0 ||
         evt.type == 'touchstart') {
         evt.preventDefault();
@@ -219,7 +217,8 @@ let onMouseDown = function (evt) {
         drawPlace.addEventListener('touchend', onMouseUp);
         
         if (doubleTouchFlag) {
-            currentShape.remove();
+            drawPlace.children[drawPlace.children.length - 1].remove();
+            drawPlace.children[drawPlace.children.length - 1].remove();
             document.removeEventListener('touchmove', onMouseMove);
             doubleTouchFlag = false;
         };
