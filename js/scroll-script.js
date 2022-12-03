@@ -35,7 +35,6 @@ let onClickDown = function (evt) {
             doubleTouchFlag = false;
         };
         
-    
         let onClickMove = function (moveEvt) {
             // moveEvt.preventDefault();
             if (evt.type == 'mousedown') {
