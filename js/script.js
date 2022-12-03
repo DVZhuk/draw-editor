@@ -26,6 +26,9 @@ let onMouseDown = function (evt) {
         if (evt.touches.length == 1) {
             oneTouchFlag = true;
         };
+        if (evt.touches.length == 2) {
+            doubleTouchFlag = true;
+        };
     };
 
     // Только нажатие левой кнопки
@@ -208,17 +211,17 @@ let onMouseDown = function (evt) {
             };
         };
 
-        if (evt.touches.length > 1) {
-            currentShape.remove();
-            document.removeEventListener('touchmove', onMouseMove);
-        };
+        
         // Обработка событий движения мыши и отжатия клика
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('touchmove', onMouseMove);
         drawPlace.addEventListener('mouseup', onMouseUp);
         drawPlace.addEventListener('touchend', onMouseUp);
         
-        
+        if (doubleTouchFlag) {
+            currentShape.remove();
+            document.removeEventListener('touchmove', onMouseMove);
+        };
     
     };
     
