@@ -221,6 +221,7 @@ let onMouseDown = function (evt) {
         if (doubleTouchFlag) {
             currentShape.remove();
             document.removeEventListener('touchmove', onMouseMove);
+            doubleTouchFlag = false;
         };
     
     };
