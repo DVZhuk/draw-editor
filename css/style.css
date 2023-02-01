@@ -1,0 +1,247 @@
+
+body {
+    margin: 0;
+}
+
+.vissually-hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+.main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    background-color: #C6B8B8;
+    min-width: min-content;
+    min-height: 480px;
+    height: calc(100vh - 40px);
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.draw-place {
+    position: relative;
+    flex-grow: 1;
+    background-color: #e6f3e0;
+    min-width: 280px;
+    max-width: 1080px;
+    height: auto;
+    border-radius: 10px;
+    cursor: crosshair;
+    overflow: auto;
+    /* отключение скролбара */
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+/* отключение скролбара */
+.draw-place::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+}
+
+.draw-place__rect {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px dotted rgba(0, 0, 0, 0.5);
+}
+
+.draw-place__ellipse {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px dotted rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.draw-place__line {
+    position: absolute;
+    height: 2px;
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.5);
+}
+
+.sidebar--color {
+    background-color: #D27D7D;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 20px;
+}
+
+.extra-panel {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
+.backward-button {
+    width: auto;
+    padding: 5px;
+    flex-grow: 1;
+    border-radius: 10px;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.backward-button__tile {
+    background-color: #BB7272;
+    width: 30px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-image: url("../img/backward.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    cursor: inherit;
+}
+
+.color-select {
+    padding: 5px;
+    flex-grow: 1;
+    width: min-content;
+    border-radius: 10px;
+}
+
+.color-select__label {
+    display: block;
+    width: 30px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #d4ce8e;
+    cursor: pointer;
+}
+
+.shape-tools {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+    margin: 0;
+    /* margin-top: 20px; */
+    height: min-content;
+    width: min-content;
+    border-radius: 10px;
+}
+
+.shape-tools-item {
+    list-style: none;
+    width: 70px;
+}
+
+.shape-tools-item__label {
+    display: block;
+    background-color: #BB7272;
+    width: auto;
+    height: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.shape-tools-item__label:hover {
+    background-color: #945858;
+    transition: all 100ms;
+}
+
+/* .shape-tools-item__label--active {
+    background-color: #8a4848;
+} */
+
+#rect:checked ~ .shape-tools-item__label {
+    background-color: #8a4848;
+}
+
+#ellipse:checked ~ .shape-tools-item__label {
+    background-color: #8a4848;
+}
+
+#line:checked ~ .shape-tools-item__label {
+    background-color: #8a4848;
+}
+
+.shape-tools__rect {
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #000;
+}
+
+.shape-tools__ellipse {
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.shape-tools__line {
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+}
+
+@media (max-width: 415px) {
+    .sidebar {
+        gap: 10px;
+        justify-content: space-between;
+    }
+    .shape-tools {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 767px) {
+    .main {
+        flex-direction: row;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        gap: 40px;
+    }
+    .sidebar {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .extra-panel {
+        gap: 20px;
+    }
+    .shape-tools {
+        flex-direction: column;
+    }
+    .color-select {
+        padding: 10px;
+    }
+    .color-select__label {
+        width: 70px;
+        height: 25px;
+    }
+    .backward-button {
+        padding: 10px;
+    }
+    .backward-button__tile {
+        width: 70px; 
+        height: 25px;
+    }
+    .backward-button:hover .backward-button__tile{
+        background-color: #945858;
+        transition: all 100ms;
+    }
+}
+
