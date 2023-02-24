@@ -24,7 +24,7 @@ body {
 .draw-place {
     position: relative;
     flex-grow: 1;
-    background-color: #e6f3e0;
+    background-color: #fff;
     min-width: 280px;
     max-width: 1080px;
     height: auto;
@@ -113,7 +113,7 @@ body {
     width: 30px;
     height: 100%;
     border-radius: 5px;
-    background-color: #d4ce8e;
+    background-color: #803a49;
     cursor: pointer;
 }
 
