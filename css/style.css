@@ -4,7 +4,9 @@ body {
 }
 
 .vissually-hidden {
-    /* visibility: hidden; */
+    width: 0;
+    height: 0;
+    opacity: 0;
     position: absolute;
 }
 
@@ -109,7 +111,7 @@ body {
 }
 
 .color-select__label {
-    display: none; /*!!!!*/
+    display: block; 
     width: 30px;
     height: 100%;
     border-radius: 5px;
