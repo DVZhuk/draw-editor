@@ -1,49 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/icon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icon.ico" />
     <title>Графический редактор</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="main">
-        <section class="draw-place">
-            <!-- <div class="draw-place__rect"></div> -->
-        </section>
-        <section class="sidebar">
-            <div class="extra-panel">
-                <button class="backward-button sidebar--color"><div class="backward-button__tile">Отменить</div></button>
-                <div class="color-select sidebar--color">
-                    <input class="color-select__input vissually-hidden" type="color" id="color" value="#803a49">
-                    <label class="color-select__label" for="color"></label>
-                </div>
-            </div>
-            <ul class="shape-tools sidebar--color">
-                <li class="shape-tools-item">
-                    <input class="vissually-hidden shape-tools-item__input" type="radio" name="shape" id="rect">
-                    <label class="shape-tools-item__label" for="rect">
-                        <div class="shape-tools__rect"></div>
-                    </label>
-                </li>
-                <li class="shape-tools-item">
-                    <input class="vissually-hidden shape-tools-item__input" type="radio" name="shape" id="ellipse">
-                    <label class="shape-tools-item__label" for="ellipse">
-                        <div class="shape-tools__ellipse"></div>
-                    </label>
-                </li>
-                <li class="shape-tools-item">
-                    <input class="vissually-hidden shape-tools-item__input" type="radio" name="shape" id="line">
-                    <label class="shape-tools-item__label" for="line">
-                        <div class="shape-tools__line"></div>
-                    </label>
-                </li>
-            </ul>
-        </section>
+      <section class="draw-place">
+        <!-- <div class="draw-place__rect"></div> -->
+      </section>
+      <section class="sidebar">
+        <div class="extra-panel">
+          <button class="backward-button sidebar--color">
+            <div class="backward-button__tile">Отменить</div>
+          </button>
+          <div class="color-select sidebar--color">
+            <input
+              class="color-select__input vissually-hidden"
+              type="color"
+              id="color"
+              value="#803a49"
+            ></input>
+            <label class="color-select__label" for="color"></label>
+          </div>
+        </div>
+        <ul class="shape-tools sidebar--color">
+          <li class="shape-tools-item">
+            <input
+              class="vissually-hidden shape-tools-item__input"
+              type="radio"
+              name="shape"
+              id="rect"
+            />
+            <label class="shape-tools-item__label" for="rect">
+              <div class="shape-tools__rect"></div>
+            </label>
+          </li>
+          <li class="shape-tools-item">
+            <input
+              class="vissually-hidden shape-tools-item__input"
+              type="radio"
+              name="shape"
+              id="ellipse"
+            />
+            <label class="shape-tools-item__label" for="ellipse">
+              <div class="shape-tools__ellipse"></div>
+            </label>
+          </li>
+          <li class="shape-tools-item">
+            <input
+              class="vissually-hidden shape-tools-item__input"
+              type="radio"
+              name="shape"
+              id="line"
+            />
+            <label class="shape-tools-item__label" for="line">
+              <div class="shape-tools__line"></div>
+            </label>
+          </li>
+        </ul>
+      </section>
     </main>
     <script src="js/script.js"></script>
     <script src="js/scroll-script.js"></script>
     <script src="js/backward-script.js"></script>
-</body>
+  </body>
 </html>
